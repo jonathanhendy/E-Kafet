@@ -1,6 +1,6 @@
--- phpMyAdmin SQL Dump
+-- phpMypenjual SQL Dump
 -- version 5.2.0
--- https://www.phpmyadmin.net/
+-- https://www.phpmypenjual.net/
 --
 -- Host: 127.0.0.1
 -- Generation Time: Jun 21, 2023 at 02:56 PM
@@ -176,7 +176,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `address`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Yehezkiel Arganisha D P', 'admin@gmail.com', '6281226003367', 'Jalan Raya sarangan Rt.07/01 . Sarangan , Magetan , Jawa Timur.', NULL, '$2y$10$H83CeR9WQih4Bm.VNCbFt.3pPNI6QrQzxBD6SNtSdKaFpBvfyVqKe', NULL, '2023-12-07 00:13:32', '2023-01-19 04:52:49');
+(1, 'Yehezkiel Arganisha D P', 'penjual@gmail.com', '6281226003367', 'Jalan Raya sarangan Rt.07/01 . Sarangan , Magetan , Jawa Timur.', NULL, '$2y$10$H83CeR9WQih4Bm.VNCbFt.3pPNI6QrQzxBD6SNtSdKaFpBvfyVqKe', NULL, '2023-12-07 00:13:32', '2023-01-19 04:52:49');
 
 --
 -- Indexes for dumped tables

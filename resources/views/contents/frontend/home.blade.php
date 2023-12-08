@@ -6,7 +6,7 @@
 </div> --}}
 <!-- end promosi -->
 <!-- carausel -->
-<div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+<!-- <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
     {{-- <ol class="carousel-indicators">
         <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
         <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
@@ -25,13 +25,13 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
-</div>
+</div> -->
 <div class="container mt-5">
     <div class="row">
         <div class="col-sm-9 mx-auto">
             <!--product -->
             <div class="product">
-                <h4 class="mb-4"><b>Produk Terbaru</b></h4>
+                <h4 class="mb-4"><b>Selamat Datang, Silahkan Pilih Menu</b></h4>
                 @include('components.frontend.produk_list')
             </div>
             <!-- end product -->

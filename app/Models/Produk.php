@@ -15,6 +15,7 @@ class Produk extends Model
     protected $dates = ['deleted_at'];
     protected $fillable = [
         "id_kategori",
+        "user_id",
         "gambar",
         "nama_produk",
         "deskripsi",

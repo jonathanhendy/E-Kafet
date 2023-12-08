@@ -6,7 +6,7 @@ html,body
 {
     scroll-behavior: smooth;
     background:#fff !important;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     color:#333;
     width:100%;
 }
@@ -135,6 +135,12 @@ body{
     border: 0px;
 }
 
+.btn-checkout{
+    background-color: #47993a !important;
+    color:#ffffff;
+    border: 0px;
+}
+
 .card-rounded{
     border-radius:8px !important;
     box-shadow: 1px 7px 20px rgba(0, 0, 0, 0.1);
@@ -185,13 +191,12 @@ body{
 }
 
 .footer{
-    margin-top:3pc;
+    margin-top:4pc;
     background-color: #f1f1f1;
     color:#333;
-    padding-top:4pc;
-    padding-bottom: 4pc;
+    padding-top:2pc;
+    padding-bottom: 2pc;
     font-size: 12pt;
-
 }
 
 .footer h4{

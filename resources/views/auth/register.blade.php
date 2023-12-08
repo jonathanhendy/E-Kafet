@@ -6,7 +6,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ $title ?? 'Admin' }}</title>
+    <title>{{ $title ?? 'penjual' }}</title>
     <!-- Styles -->
         <link rel="shortcut icon" href="{{ asset('assets/img/keranjang.png') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -21,10 +21,7 @@
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                                                <!-- Authentication Links -->
-                                                                                    
-                            
-                                                            
+                                                <!-- Authentication Links -->                                
                 </div>
             </div>
         </nav>

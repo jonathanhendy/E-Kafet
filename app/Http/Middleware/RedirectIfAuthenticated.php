@@ -23,7 +23,12 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+                if(Auth::user()->isPembeli == true){
+                return redirect()->route('home.index');
+            }
+            if(Auth::user()->isAdmin == true){
+                return redirect()->route('admin.home');
+            }
             }
         }
 

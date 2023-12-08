@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.penjual')
 
 @section('content')
 <div class="container">
@@ -6,7 +6,7 @@
         <div class="col-md-5">
             <div class="card card-rounded">
                 <div class="card-header bg-primary text-white">
-                    <h5 class="card-title pt-2">{{ __('Login Admin') }}</h5>
+                    <h5 class="card-title pt-2">{{ __('Login') }}</h5>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

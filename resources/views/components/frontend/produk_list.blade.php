@@ -1,3 +1,4 @@
+
 <div class="d-none d-lg-block">
     <div class="row">
         @foreach($produk as $r)
@@ -13,6 +14,10 @@
             </div>  
         </div>  
         @endforeach
+        <br>
+    </div>
+    <div class="d-flex justify-content-center">   
+    {{$produk->links()}}
     </div>
 </div>
 <div class="d-lg-none">
@@ -30,5 +35,7 @@
             </div>  
         </div>  
         @endforeach
+        
     </div>  
+    
 </div>

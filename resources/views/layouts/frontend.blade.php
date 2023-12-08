@@ -17,6 +17,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href="{{ asset('assets/css/main.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
     <body>
         <!-- navbar -->
@@ -42,11 +43,48 @@
                         </li>
                         @endforeach
                         <li class="nav-item">
-                            @if(isset(auth()->user()->name))
-                                <a class="nav-link active bg-primary text-white" href="{{ url('admin') }}">Dashboard</a>
-                            @else 
-                                <a class="nav-link active" href="{{ url('login') }}">Login</a>
-                            @endif
+                            @guest
+                            <a class="nav-link active" href="{{ url('login') }}">Login</a>
+                            @else
+                            @if(Auth::user()->isPenjual == 1)
+                                <a class="nav-link active" href="{{ url('penjual') }}">Home Penjual</a>
+        
+                        @endif
+                        @if(Auth::user()->isAdmin == 1)
+                                <a class="nav-link active" href="{{ url('homeadmin') }}">Home Admin</a>
+                        @endif
+                        @if(Auth::user()->isPembeli == 1)
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ route('pembeli.keranjang') }}">Keranjang</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ route('pembeli.pesanansukses') }}">Pesanan Anda</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" href="{{ url('saldo') }}">Saldo</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('penjual.profil') }}">
+                                        Edit Profil
+                                    </a>
+                                    <div class="divider"></div>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endif
+                      @endguest
                         </li>
                         
                         <li class="nav-item">

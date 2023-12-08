@@ -23,9 +23,10 @@ class HomeController extends Controller
         $data = [
             'title'     => 'E-Kafet UKDW',
             'kategori'  => Kategori::All(),
-            'produk'    => $produkdb->latest()->paginate(8),
+            'produk'    => $produkdb->paginate(8),
         ];
-        return view('contents.frontend.home', $data);
+        $user = \Auth::user();
+        return view('contents.frontend.home', compact('user'),$data);
     }
     public function kategori(Request $request, $id)
     {
@@ -63,21 +64,23 @@ class HomeController extends Controller
     {
         $reqsearch = $request->get('keyword');  
         $produkdb = Produk::leftJoin('kategori','produk.id_kategori','=','kategori.id')
-            ->select('kategori.nama_kategori','produk.*')->where('produk.id', $id)->first();
+            ->select('kategori.nama_kategori','produk.*')
+            ->where('produk.id', $id)->first();
 
         if(!$produkdb){ abort('404'); }
+        $tokoId = Produk::where('id', $id)->first()->user_id;
+        $title = User::where('id', $tokoId)->first()->name;
 
         $data = [
-            'title'     => $produkdb->nama_produk,
             'kategori'  => Kategori::All(),
-            'profil_toko' => User::find(1),
             'edit'      => $produkdb,
         ];
-        return view('contents.frontend.produk', $data);
+        return view('contents.frontend.produk', $data,compact('title'));
     }
 
-    public function redir_admin(){
-        return redirect('admin');
+
+    public function redir_penjual(){
+        return redirect('penjual');
     }
 
 }
